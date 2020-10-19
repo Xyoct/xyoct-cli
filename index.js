@@ -59,11 +59,27 @@ function main(name) {
             name: 'author',
             message: '请输入项目作者',
             default: '王二狗'
+        },
+        {
+            type: 'list',
+            message: '请选择项目中的数据库类型:',
+            name: 'dbtype',
+            choices: [
+                "MongoDB",
+                "Mysql"
+            ]
         }
     ]).then((answers) => {
         const spinner = ora('Downloading……');
+        let downloadUrl = 'Xyoct/cli-temp'
+        if (answers.dbtype == 'MongoDB') {
+            downloadUrl += '#db'
+        }
+        if (answers.dbtype == 'Mysql') {
+            downloadUrl += '#mysql'
+        }
         spinner.start();
-        download('Happy-Everyday/cli-temp', name, function (err) {
+        download(downloadUrl, name, function (err) {
             if (err) {
                 spinner.fail();
                 console.log(symbols.error, chalk.red(err));

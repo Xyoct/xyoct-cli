@@ -40,8 +40,8 @@ program
         console.log()
         console.log('  Examples:')
         console.log()
-        console.log(chalk.green('    # create a new project with an Github template: xyoct7-cli init <project-name>'))
-        console.log('    $ xyoct7-cli init my-project')
+        console.log(chalk.green('    # create a new project with an Github template: xyoct-cli init <project-name>'))
+        console.log('    $ xyoct-cli init my-project')
         console.log()
     })
 
@@ -97,7 +97,7 @@ function main(name) {
                 const result = hbs.compile(content)(meta);
                 fs.writeFileSync(fileName, result);
             }
-            console.log(symbols.success, chalk.green('The project has downloaded successfully!'));
+            console.log(symbols.success, chalk.green('Successfully!'));
         })
     })
 }

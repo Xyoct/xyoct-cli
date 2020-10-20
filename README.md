@@ -1,11 +1,11 @@
 ### 1. 安装
 ```
-npm i xyoct7-cli -g
+npm i xyoct-cli -g
 ```
 
 ### 2. 新建
 ```
-xyoct7-cli init <my-project>
+xyoct-cli init <my-project>
 ```
 
 ### 3. 运行
